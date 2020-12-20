@@ -1,4 +1,4 @@
-FROM redis:latest
+FROM mongo:latest
 
 # install Python 3
 RUN apt-get update && apt-get install -y python3 python3-pip
@@ -10,6 +10,6 @@ COPY . .
 
 RUN pip3 install -r requirements.txt
 
-CMD [ "python3", "blockchain_radis.py"]
+CMD [ "python3", "blockchain_mongo.py" ]
 
-EXPOSE 6379
+EXPOSE 27017
